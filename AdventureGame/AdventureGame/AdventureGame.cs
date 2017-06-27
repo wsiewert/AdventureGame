@@ -8,9 +8,9 @@ namespace AdventureGame
 {
     class AdventureGame
     {
-        Player adventurer = new Player();
-        Castle castle = new Castle();
-        Cellar cellar = new Cellar();
+        public Player adventurer = new Player();
+        public Castle castle = new Castle();
+        public Cellar cellar = new Cellar();
 
         public AdventureGame()
         {
@@ -37,28 +37,28 @@ namespace AdventureGame
 
         public void Menu()
         {
-                Console.WriteLine("_____________________________________");
-                Console.ForegroundColor = ConsoleColor.Cyan;
-                Console.Write(adventurer.name);
-                Console.ForegroundColor = ConsoleColor.White;
-                Console.Write("     @     ");
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine(adventurer.location);
-                Console.ResetColor();
+            Console.WriteLine("_____________________________________");
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.Write(adventurer.name);
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write("     @     ");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine(adventurer.location);
+            Console.ResetColor();
 
-                switch (adventurer.location)
-                {
-                    case "castle":
-                        adventurer.location = castle.Choice();
-                        Menu();
-                        break;
-                    case "cellar":
-                        adventurer.location = cellar.Choice();
-                        Menu();
-                        break;
-                    default:
-                        break;
-                }
+            switch (adventurer.location)
+            {
+                case "castle":
+                    adventurer.location = castle.Choice();
+                    Menu();
+                    break;
+                case "cellar":
+                    adventurer.location = cellar.Choice();
+                    Menu();
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

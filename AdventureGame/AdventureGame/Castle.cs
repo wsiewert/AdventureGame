@@ -9,8 +9,8 @@ namespace AdventureGame
     class Castle
     {
         public string locationName = "castle";
-        public string choiceField = "'field'";
-        public string choiceCellar = "'cellar'";
+        public string choiceField = "field";
+        public string choiceCellar = "cellar";
 
         public Castle()
         {
@@ -24,7 +24,17 @@ namespace AdventureGame
             Console.WriteLine(choiceField + " " + choiceCellar);
             Console.ResetColor();
             string userInput = Console.ReadLine();
-            return userInput;
+            if (userInput == choiceCellar || userInput == choiceField)
+            {
+                return userInput;
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("NOT A COMMAND!");
+                Console.ResetColor();
+                return Choice();
+            }
         }
     }
 }

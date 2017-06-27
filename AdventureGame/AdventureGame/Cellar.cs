@@ -8,6 +8,7 @@ namespace AdventureGame
 {
     class Cellar
     {
+        public string locationName = "cellar";
         public string choiceCastle = "castle";
 
         public Cellar()
@@ -22,7 +23,17 @@ namespace AdventureGame
             Console.WriteLine(choiceCastle);
             Console.ResetColor();
             string userInput = Console.ReadLine();
-            return userInput;
+            if (userInput == choiceCastle)
+            {
+                return userInput;
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("NOT A COMMAND!");
+                Console.ResetColor();
+                return Choice();
+            }
         }
     }
 }
