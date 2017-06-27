@@ -10,6 +10,7 @@ namespace AdventureGame
     {
         Player adventurer = new Player();
         Castle castle = new Castle();
+        Cellar cellar = new Cellar();
 
         public AdventureGame()
         {
@@ -52,7 +53,7 @@ namespace AdventureGame
                         Menu();
                         break;
                     case "cellar":
-                        adventurer.location = castle.Choice();
+                        adventurer.location = cellar.Choice();
                         Menu();
                         break;
                     default:
