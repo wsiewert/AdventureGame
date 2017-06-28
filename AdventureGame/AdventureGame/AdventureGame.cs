@@ -11,6 +11,7 @@ namespace AdventureGame
         public Player adventurer = new Player();
         public Castle castle = new Castle();
         public Cellar cellar = new Cellar();
+        public Field field = new Field();
 
         public AdventureGame()
         {
@@ -56,6 +57,10 @@ namespace AdventureGame
                     break;
                 case "castle":
                     adventurer.location = castle.Choice(adventurer);
+                    DisplayMenu();
+                    break;
+                case "field":
+                    adventurer.location = field.Choice(adventurer);
                     DisplayMenu();
                     break;
                 case "quit":

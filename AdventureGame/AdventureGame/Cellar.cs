@@ -26,8 +26,8 @@ namespace AdventureGame
 
             switch (userInput)
             {
-                case "cellar":
-                    return "cellar";
+                case "castle":
+                    return "castle";
                 case "player commands":
                     adventurer.DisplayPlayerCommands();
                     return "cellar";
