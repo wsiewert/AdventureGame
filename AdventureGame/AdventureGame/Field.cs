@@ -40,11 +40,14 @@ namespace AdventureGame
                     return "mountain";
                 case "player commands":
                     adventurer.DisplayPlayerCommands();
-                    return "cellar";
+                    return "field";
                 case "quit":
                     break;
                 default:
-                    break;
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
+                    Console.WriteLine(userInput + "  --NOT A COMMAND--");
+                    Console.ResetColor();
+                    return Choice(adventurer);
             }
             return userInput;
         }

@@ -34,7 +34,10 @@ namespace AdventureGame
                 case "quit":
                     break;
                 default:
-                    break;
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
+                    Console.WriteLine(userInput + "  --NOT A COMMAND--");
+                    Console.ResetColor();
+                    return Choice(adventurer);
             }
             return userInput;
         }
