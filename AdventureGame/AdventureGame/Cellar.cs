@@ -16,24 +16,27 @@ namespace AdventureGame
 
         }
 
-        public string Choice()
+        public string Choice(Player adventurer)
         {
             Console.WriteLine("Choices:");
             Console.ForegroundColor = ConsoleColor.Magenta;
-            Console.WriteLine(choiceCastle);
+            Console.WriteLine("'" + choiceCastle + "'");
             Console.ResetColor();
             string userInput = Console.ReadLine();
-            if (userInput == choiceCastle)
+
+            switch (userInput)
             {
-                return userInput;
+                case "cellar":
+                    return "cellar";
+                case "player commands":
+                    adventurer.DisplayPlayerCommands();
+                    return "cellar";
+                case "quit":
+                    break;
+                default:
+                    break;
             }
-            else
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("NOT A COMMAND!");
-                Console.ResetColor();
-                return Choice();
-            }
+            return userInput;
         }
     }
 }

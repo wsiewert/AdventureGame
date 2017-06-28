@@ -21,7 +21,9 @@ namespace AdventureGame
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("Hi there adventurer, lets give you a name first: ");
+            Console.ForegroundColor = ConsoleColor.Cyan;
             adventurer.name = Console.ReadLine();
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("Welcome adventurer " + adventurer.name + ", lets get started.");
             Console.WriteLine("Press any key to continue.");
             Console.ReadKey();
@@ -32,10 +34,10 @@ namespace AdventureGame
             Console.ReadKey();
             Console.WriteLine("You start off in a castle with nothing in your inventory...");
 
-            Menu();
+            DisplayMenu();
         }
 
-        public void Menu()
+        public void DisplayMenu()
         {
             Console.WriteLine("_____________________________________");
             Console.ForegroundColor = ConsoleColor.Cyan;
@@ -48,13 +50,15 @@ namespace AdventureGame
 
             switch (adventurer.location)
             {
-                case "castle":
-                    adventurer.location = castle.Choice();
-                    Menu();
-                    break;
                 case "cellar":
-                    adventurer.location = cellar.Choice();
-                    Menu();
+                    adventurer.location = cellar.Choice(adventurer);
+                    DisplayMenu();
+                    break;
+                case "castle":
+                    adventurer.location = castle.Choice(adventurer);
+                    DisplayMenu();
+                    break;
+                case "quit":
                     break;
                 default:
                     break;

@@ -45,6 +45,7 @@
     <Compile Include="AdventureGame.cs" />
     <Compile Include="Castle.cs" />
     <Compile Include="Cellar.cs" />
+    <Compile Include="Field.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
